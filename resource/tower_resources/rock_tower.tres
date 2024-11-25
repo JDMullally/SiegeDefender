@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TowerType" load_steps=2 format=3 uid="uid://diqerp0ekr35b"]
+
+[ext_resource type="Script" path="res://scripts/Tower/tower_type.gd" id="1_j1ind"]
+
+[resource]
+script = ExtResource("1_j1ind")
+name = "Boulder Tower"
+tower_type = 5
+base_damage_type = 4
+base_damage = 5
+attack_speed = 0.5
+range = 50
+tier_type = 0

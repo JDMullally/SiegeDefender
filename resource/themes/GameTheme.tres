@@ -1,0 +1,164 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://c2t3ird2a5evn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq53y"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.572549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu6q8"]
+bg_color = Color(0.137255, 0.0627451, 0.00784314, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reqom"]
+bg_color = Color(0.137255, 0.0627451, 0.00784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jiile"]
+bg_color = Color(0.137762, 0.0642763, 0.00781726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.707967, 0.707967, 0.707966, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsanw"]
+bg_color = Color(0.137255, 0.0627451, 0.00784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.709804, 0.709804, 0.709804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7apu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr84a"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7uw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbf5h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ps4t6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsht7"]
+bg_color = Color(0.192157, 0.101961, 0.0392157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.625597, 0.625597, 0.625597, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.817521, 0.817521, 0.817521, 1)
+Button/colors/font_pressed_color = Color(0.968627, 0.968627, 0.819608, 1)
+Button/colors/icon_disabled_color = Color(0.28485, 0.28485, 0.28485, 1)
+Button/colors/icon_focus_color = Color(0.585062, 0.585062, 0.585062, 1)
+Button/colors/icon_hover_color = Color(0.712129, 0.712129, 0.712129, 1)
+Button/colors/icon_hover_pressed_color = Color(0.626851, 0.330379, 0.215151, 1)
+Button/colors/icon_normal_color = Color(0.54902, 0.282353, 0.180392, 1)
+Button/colors/icon_pressed_color = Color(0.627553, 0.329707, 0.216088, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_fq53y")
+Button/styles/focus = SubResource("StyleBoxFlat_mu6q8")
+Button/styles/hover = SubResource("StyleBoxFlat_reqom")
+Button/styles/normal = SubResource("StyleBoxFlat_jiile")
+Button/styles/pressed = SubResource("StyleBoxFlat_gsanw")
+CheckButton/colors/font_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_focus_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_hover_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+CheckButton/constants/check_v_offset = 0
+CheckButton/constants/h_separation = 0
+CheckButton/constants/outline_size = 0
+CheckButton/font_sizes/font_size = 16
+CheckButton/fonts/font = null
+CheckButton/icons/checked = null
+CheckButton/icons/checked_disabled = null
+CheckButton/icons/checked_disabled_mirrored = null
+CheckButton/icons/checked_mirrored = null
+CheckButton/icons/unchecked = null
+CheckButton/icons/unchecked_disabled = null
+CheckButton/icons/unchecked_disabled_mirrored = null
+CheckButton/icons/unchecked_mirrored = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/colors/font_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_focus_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_hover_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_outline_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+ColorPickerButton/constants/h_separation = 0
+ColorPickerButton/constants/outline_size = 0
+ColorPickerButton/font_sizes/font_size = 16
+ColorPickerButton/fonts/font = null
+ColorPickerButton/icons/bg = null
+ColorPickerButton/styles/disabled = null
+ColorPickerButton/styles/focus = null
+ColorPickerButton/styles/hover = null
+ColorPickerButton/styles/normal = null
+ColorPickerButton/styles/pressed = null
+MenuButton/colors/font_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_focus_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_hover_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_outline_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+MenuButton/constants/h_separation = 0
+MenuButton/constants/outline_size = 0
+MenuButton/font_sizes/font_size = 16
+MenuButton/fonts/font = null
+MenuButton/styles/disabled = SubResource("StyleBoxFlat_q7apu")
+MenuButton/styles/focus = SubResource("StyleBoxFlat_nr84a")
+MenuButton/styles/hover = SubResource("StyleBoxFlat_k7uw6")
+MenuButton/styles/normal = SubResource("StyleBoxFlat_pbf5h")
+MenuButton/styles/pressed = SubResource("StyleBoxFlat_ps4t6")
+OptionButton/colors/font_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_disabled_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_focus_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_hover_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 0
+OptionButton/constants/h_separation = 0
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = null
+OptionButton/styles/disabled = null
+OptionButton/styles/disabled_mirrored = null
+OptionButton/styles/focus = null
+OptionButton/styles/hover = null
+OptionButton/styles/hover_mirrored = null
+OptionButton/styles/normal = null
+OptionButton/styles/normal_mirrored = null
+OptionButton/styles/pressed = null
+OptionButton/styles/pressed_mirrored = null
+Panel/styles/panel = SubResource("StyleBoxFlat_wsht7")
