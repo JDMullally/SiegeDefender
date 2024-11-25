@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfy1d06i0hmex"]
+
+[ext_resource type="Script" path="res://scripts/Tower/tower_layer.gd" id="1_sbauu"]
+
+[node name="TowerLayer" type="Node2D"]
+script = ExtResource("1_sbauu")

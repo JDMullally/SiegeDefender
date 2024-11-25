@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://6jr0ktf8sc85"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_0700i"]
+[ext_resource type="SpriteFrames" uid="uid://b5ve0wrglax2h" path="res://resource/enemy_animations/rock_elemental_sprite_frames.tres" id="2_k5ie6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0cla"]
+size = Vector2(64, 64)
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("enemy_collision_shape", "animated_sprite")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_0700i")
+enemy_collision_shape = NodePath("CollisionShape2D")
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v0cla")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_k5ie6")
+animation = &"attack"

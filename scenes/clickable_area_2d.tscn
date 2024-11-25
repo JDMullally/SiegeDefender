@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjntnyp11y0tn"]
+
+[ext_resource type="Script" path="res://scripts/Tower/clickable_area_2d.gd" id="1_8yvcb"]
+
+[node name="ClickableArea2D" type="Area2D"]
+script = ExtResource("1_8yvcb")

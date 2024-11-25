@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8m3mfvyk7gbq"]
+
+[ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="1_cqn6m"]
+[ext_resource type="Script" path="res://scripts/ui/purchase_panel.gd" id="2_sgvv8"]
+[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/money_ui.tscn" id="3_1waye"]
+
+[node name="PurchasePanel" type="Panel"]
+offset_left = 850.0
+offset_top = 60.0
+offset_right = 1100.0
+offset_bottom = 460.0
+theme = ExtResource("1_cqn6m")
+script = ExtResource("2_sgvv8")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 225.0
+offset_bottom = 33.0
+text = "Tower Purchase Menu"
+horizontal_alignment = 1
+
+[node name="PurchaseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 340.0
+offset_right = 230.0
+offset_bottom = 370.0
+theme = ExtResource("1_cqn6m")
+theme_override_font_sizes/font_size = 12
+text = "Purchase Tower"
+
+[node name="TotalPrice" parent="PurchaseButton" instance=ExtResource("3_1waye")]
+offset_left = -100.0
+offset_top = 15.0
+offset_right = -60.0
+offset_bottom = 55.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 225.0
+offset_bottom = 73.0
+text = "Damage Type"
+
+[node name="DamageOptions" type="OptionButton" parent="Label"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 50.0
+alignment = 1
+
+[node name="DamageTypePrice" parent="Label" instance=ExtResource("3_1waye")]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 75.0
+offset_right = 60.0
+offset_bottom = 115.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 140.0
+offset_right = 225.0
+offset_bottom = 163.0
+text = "Tower Projectile Type"
+
+[node name="AttackTypeOptions" type="OptionButton" parent="Label2"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 50.0
+alignment = 1
+
+[node name="TowerTypePrice" parent="Label2" instance=ExtResource("3_1waye")]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 75.0
+offset_right = 60.0
+offset_bottom = 115.0
+scale = Vector2(0.8, 0.8)
+money_label_type = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 230.0
+offset_right = 225.0
+offset_bottom = 253.0
+text = "Tier"
+
+[node name="TierOptions" type="OptionButton" parent="Label3"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 50.0
+alignment = 1
+
+[node name="TierPrice" parent="Label3" instance=ExtResource("3_1waye")]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 75.0
+offset_right = 60.0
+offset_bottom = 115.0
+scale = Vector2(0.8, 0.8)
+money_label_type = 3
+
+[connection signal="pressed" from="PurchaseButton" to="." method="_on_purchase_button_pressed"]
+[connection signal="item_selected" from="Label/DamageOptions" to="." method="_on_damage_options_item_selected"]
+[connection signal="item_selected" from="Label2/AttackTypeOptions" to="." method="_on_attack_type_options_item_selected"]
+[connection signal="item_selected" from="Label3/TierOptions" to="." method="_on_tier_options_item_selected"]

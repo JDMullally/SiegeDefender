@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://dlkft6trndm5p"]
+
+[ext_resource type="Script" path="res://scripts/Tower/tower.gd" id="1_t1yro"]
+[ext_resource type="Texture2D" uid="uid://ccokesm3re2xk" path="res://art/tower/TowerTop.png" id="2_ncgvn"]
+[ext_resource type="Texture2D" uid="uid://dg01rg28rkxku" path="res://art/Free/Part 12/569.png" id="3_2ropc"]
+[ext_resource type="Texture2D" uid="uid://c8qsw65d183ow" path="res://art/tower/TowerBott.png" id="3_xkwqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntjb"]
+atlas = ExtResource("3_2ropc")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brpb0"]
+atlas = ExtResource("3_2ropc")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hesk4"]
+atlas = ExtResource("3_2ropc")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yef25"]
+atlas = ExtResource("3_2ropc")
+region = Rect2(704, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf56p"]
+atlas = ExtResource("3_2ropc")
+region = Rect2(768, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfsbt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brpb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hesk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yef25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf56p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yef25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hesk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brpb0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk4c5"]
+size = Vector2(100, 75)
+
+[node name="Tower" type="Node2D"]
+position = Vector2(550, 231)
+script = ExtResource("1_t1yro")
+
+[node name="TowerTop" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -96)
+texture = ExtResource("2_ncgvn")
+region_rect = Rect2(0, 0, 87, 194)
+
+[node name="Fire1" type="AnimatedSprite2D" parent="TowerTop"]
+unique_name_in_owner = true
+position = Vector2(32.6251, -1.23978e-05)
+scale = Vector2(0.29297, 0.28125)
+sprite_frames = SubResource("SpriteFrames_kfsbt")
+frame_progress = 0.701499
+speed_scale = 5.0
+
+[node name="Fire2" type="AnimatedSprite2D" parent="TowerTop"]
+unique_name_in_owner = true
+position = Vector2(-32, -6.49691e-06)
+scale = Vector2(0.273438, 0.296875)
+sprite_frames = SubResource("SpriteFrames_kfsbt")
+frame_progress = 0.902837
+speed_scale = 5.0
+
+[node name="TowerBase" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_xkwqb")
+region_rect = Rect2(22, 390, 165.443, 120.311)
+
+[node name="TowerHitbox" type="Area2D" parent="TowerBase"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBase/TowerHitbox"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_bk4c5")
+
+[connection signal="body_entered" from="TowerBase/TowerHitbox" to="." method="_on_tower_hitbox_body_entered"]

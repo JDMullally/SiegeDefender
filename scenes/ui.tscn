@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkyyrct02twxp"]
+
+[ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_217l4"]
+[ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="1_mvsjk"]
+[ext_resource type="PackedScene" uid="uid://b8m3mfvyk7gbq" path="res://scenes/purchase_panel.tscn" id="2_mik04"]
+[ext_resource type="PackedScene" uid="uid://clajxda20r6a" path="res://scenes/upgrade_panel.tscn" id="2_xr1ku"]
+[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/money_ui.tscn" id="4_ujk8p"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_217l4")
+
+[node name="UpgradePanel" parent="." instance=ExtResource("2_xr1ku")]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 40.0
+offset_right = 800.0
+offset_bottom = 440.0
+
+[node name="PurchasePanel" parent="." instance=ExtResource("2_mik04")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 40.0
+offset_right = 1050.0
+offset_bottom = 440.0
+
+[node name="ErrorText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 447.0
+offset_right = 735.0
+offset_bottom = 647.0
+bbcode_enabled = true
+text = "[color=RED]HELLO[/color]"
+
+[node name="ErrorTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Taskbar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 50.0
+
+[node name="Panel" type="Panel" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mvsjk")
+
+[node name="PlayerMoney" parent="Taskbar" instance=ExtResource("4_ujk8p")]
+unique_name_in_owner = true
+offset_left = 1050.0
+offset_top = 25.0
+offset_right = 1090.0
+offset_bottom = 65.0
+money_label_type = 0
+
+[node name="ShowPurchaseMenu" type="Button" parent="Taskbar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 850.0
+offset_top = 10.0
+offset_right = 1010.0
+offset_bottom = 40.0
+theme = ExtResource("1_mvsjk")
+theme_override_font_sizes/font_size = 12
+text = "Show Buy Panel
+"
+
+[node name="ShowUpgradePanel" type="Button" parent="Taskbar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 600.0
+offset_top = 10.0
+offset_right = 760.0
+offset_bottom = 40.0
+theme = ExtResource("1_mvsjk")
+theme_override_font_sizes/font_size = 12
+text = "Show Upgrade Panel
+"
+
+[connection signal="pressed" from="Taskbar/ShowPurchaseMenu" to="." method="_on_show_purchase_menu_pressed"]
+[connection signal="pressed" from="Taskbar/ShowUpgradePanel" to="." method="_on_show_upgrade_panel_pressed"]
