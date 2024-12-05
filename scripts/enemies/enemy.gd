@@ -7,6 +7,7 @@ const BASE_MOVE_SPEED = 10
 @export var enemy_stats : EnemyStats
 @export var animated_sprite : AnimatedSprite2D
 @export var enemy_ai : EnemyAI
+@export var clickable_area : ClickableArea2D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed : float
 
@@ -16,6 +17,19 @@ func _init(sprite_frames : SpriteFrames, enemy_stats : EnemyStats, flip : bool, 
 	set_sprite(sprite_frames, flip)
 	set_collision_shape()
 	set_ai(enemy_type)
+
+func set_new_clickable_area():
+	var collision_shape = CollisionShape2D.new()
+	var animation = animated_sprite.animation
+	var current_frame = animated_sprite.frame
+	
+	var new_shape = RectangleShape2D.new()
+	new_shape.size = animated_sprite.sprite_frames.get_frame_texture(animation, current_frame).get_size()
+	new_shape.size.x = roundi(new_shape.size.x * .75)
+	collision_shape.shape = new_shape
+	
+	self.clickable_area = EnemyClickableArea2D.new(collision_shape)
+	add_child(self.clickable_area)
 
 func set_ai(enemy_type : GameRules.ENEMY_TYPE):
 	self.enemy_ai = EnemyAI.new(self)
@@ -38,6 +52,7 @@ func set_collision_shape():
 	self.set_collision_layer_value(2, false)
 	self.set_collision_mask_value(2, true)
 	self.set_collision_layer_value(3, true)
+	set_new_clickable_area()
 
 func set_sprite(sprite_frames : SpriteFrames, flip : bool):
 	self.animated_sprite = AnimatedSprite2D.new()

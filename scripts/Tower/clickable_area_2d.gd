@@ -12,5 +12,7 @@ func update_clickable_area_dict(new_dict : Dictionary):
 	
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		print(info_dict)
-		GameRules.send_tower_info_to_ui.emit(info_dict)
+		do_clickable_thing()
+
+func do_clickable_thing():
+	GameRules.send_tower_info_to_ui.emit(info_dict)

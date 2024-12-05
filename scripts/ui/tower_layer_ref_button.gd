@@ -11,6 +11,5 @@ func _init(game_theme : Theme, display_text : String, tower_layer_reference: Tow
 	self.pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
-	print("bello")
 	GameRules.update_upgrade_panel.emit(tower_layer_reference)
 	

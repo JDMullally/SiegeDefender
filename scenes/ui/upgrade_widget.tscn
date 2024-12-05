@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ui/upgrade_widget.gd" id="1_eg7a4"]
 [ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="2_pejim"]
-[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/money_ui.tscn" id="3_deo53"]
+[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/ui/money_ui.tscn" id="3_deo53"]
 
 [node name="UpgradeWidget" type="Control"]
 layout_mode = 3
@@ -16,6 +16,7 @@ offset_bottom = -599.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+mouse_filter = 2
 script = ExtResource("1_eg7a4")
 
 [node name="UpgradeButton" type="Button" parent="."]
@@ -32,19 +33,31 @@ text = "+"
 
 [node name="UpgradeMoneyUI" parent="." instance=ExtResource("3_deo53")]
 unique_name_in_owner = true
-offset_left = 169.0
+offset_left = 162.0
 offset_top = 24.0
-offset_right = 220.0
+offset_right = 213.0
 offset_bottom = 63.0
+scale = Vector2(0.8, 0.8)
 
-[node name="Label" type="Label" parent="."]
+[node name="UpgradeType" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -2.0
 offset_top = 12.0
-offset_right = 122.0
+offset_right = 78.0
 offset_bottom = 35.0
 theme_override_font_sizes/font_size = 12
 text = "Upgrade Type"
 clip_text = true
+
+[node name="Number" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 79.0
+offset_top = 12.0
+offset_right = 122.0
+offset_bottom = 38.0
+bbcode_enabled = true
+fit_content = true
 
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

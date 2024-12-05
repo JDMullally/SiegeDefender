@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://c0d2j3kqgqny" path="res://art/Grassy_Mountains_Parallax_Background-vnitti/layers/sky.png" id="2_apofk"]
 [ext_resource type="Texture2D" uid="uid://d3snplv5m4kkr" path="res://art/Grass_Sprite.png" id="2_r80da"]
 [ext_resource type="Texture2D" uid="uid://dexrb5btesq5q" path="res://art/Grassy_Mountains_Parallax_Background-vnitti/layers/far_mountains.png" id="3_li8y8"]
-[ext_resource type="PackedScene" uid="uid://dlkft6trndm5p" path="res://scenes/tower.tscn" id="3_qpvay"]
+[ext_resource type="PackedScene" uid="uid://dlkft6trndm5p" path="res://scenes/tower/tower.tscn" id="3_qpvay"]
 [ext_resource type="Script" path="res://scripts/World/parallax_layer.gd" id="4_7n8gm"]
 [ext_resource type="Texture2D" uid="uid://drwriv56q1vha" path="res://art/Grassy_Mountains_Parallax_Background-vnitti/layers/grassy_mountains.png" id="4_stbp5"]
 [ext_resource type="Texture2D" uid="uid://cxakcnib7uuc5" path="res://art/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_mid.png" id="5_v4k4f"]
 [ext_resource type="Texture2D" uid="uid://drmk21q0qswua" path="res://art/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_front.png" id="6_4646b"]
 [ext_resource type="Script" path="res://scripts/World/game_camera.gd" id="10_dv1et"]
-[ext_resource type="PackedScene" uid="uid://dkyyrct02twxp" path="res://scenes/ui.tscn" id="11_3wwne"]
-[ext_resource type="PackedScene" uid="uid://chcqr3td5guim" path="res://scenes/enemy_spawner.tscn" id="12_6xkhk"]
+[ext_resource type="PackedScene" uid="uid://dkyyrct02twxp" path="res://scenes/ui/ui.tscn" id="11_3wwne"]
+[ext_resource type="PackedScene" uid="uid://chcqr3td5guim" path="res://scenes/enemy/enemy_spawner.tscn" id="12_6xkhk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u4p3"]
 texture = ExtResource("2_r80da")
@@ -263,7 +263,7 @@ position = Vector2(557, 490)
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(570, 365)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.25, 1.25)
 position_smoothing_enabled = true
 script = ExtResource("10_dv1et")
 

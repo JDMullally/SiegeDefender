@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="1_cqn6m"]
 [ext_resource type="Script" path="res://scripts/ui/purchase_panel.gd" id="2_sgvv8"]
-[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/money_ui.tscn" id="3_1waye"]
+[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/ui/money_ui.tscn" id="3_1waye"]
 
 [node name="PurchasePanel" type="Panel"]
 offset_left = 850.0

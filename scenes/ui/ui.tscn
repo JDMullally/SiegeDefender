@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_217l4"]
 [ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="1_mvsjk"]
-[ext_resource type="PackedScene" uid="uid://b8m3mfvyk7gbq" path="res://scenes/purchase_panel.tscn" id="2_mik04"]
-[ext_resource type="PackedScene" uid="uid://clajxda20r6a" path="res://scenes/upgrade_panel.tscn" id="2_xr1ku"]
-[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/money_ui.tscn" id="4_ujk8p"]
+[ext_resource type="PackedScene" uid="uid://b8m3mfvyk7gbq" path="res://scenes/ui/purchase_panel.tscn" id="2_mik04"]
+[ext_resource type="PackedScene" uid="uid://clajxda20r6a" path="res://scenes/ui/upgrade_panel.tscn" id="2_xr1ku"]
+[ext_resource type="PackedScene" uid="uid://dyvyf68ecppp1" path="res://scenes/ui/money_ui.tscn" id="4_ujk8p"]
 
 [node name="UI" type="Control"]
 layout_mode = 3

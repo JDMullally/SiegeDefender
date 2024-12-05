@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameRules="*res://scripts/global/game_rules.gd"
+Math="*res://scripts/global/math.gd"
 
 [display]
 

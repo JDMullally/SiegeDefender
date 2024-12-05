@@ -4,15 +4,6 @@ extends Control
 @export var money_label_type : GameRules.MONEY_LABEL_TYPE
 @onready var money : int = 0
 
-var money_suffix_map : Dictionary = {
-	"Qi" : 1000000000000000000,
-	"Q" : 1000000000000000,
-	"T" : 1000000000000,
-	"B" : 1000000000,
-	"M" : 1000000,
-	"K": 1000,
-}
-
 func _ready() -> void:
 	GameRules.update_coin_ui.connect(update_coins)
 
@@ -28,7 +19,7 @@ func round_to_dec(num, digit):
 	return round(num * pow(10.0, digit)) / pow(10.0, digit)
 
 func add_suffix_to_money(money: int)-> String:
-	for key in money_suffix_map.keys():
-		if money % money_suffix_map[key] != money:
-			return str(round_to_dec(float(money) / money_suffix_map[key], 2)) + key
+	for key in Math.money_suffix_map.keys():
+		if money % Math.money_suffix_map[key] != money:
+			return str(round_to_dec(float(money) / Math.money_suffix_map[key], 2)) + key
 	return str(money)

@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://clajxda20r6a"]
 
-[ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="1_knod4"]
-[ext_resource type="Script" path="res://scripts/ui/upgrade_panel.gd" id="2_awg7d"]
-[ext_resource type="PackedScene" uid="uid://dx3pxn6mjholb" path="res://scenes/upgrade_widget.tscn" id="3_3gkut"]
+[ext_resource type="Theme" uid="uid://c2t3ird2a5evn" path="res://resource/themes/GameTheme.tres" id="1_k8u81"]
+[ext_resource type="Script" path="res://scripts/ui/upgrade_panel.gd" id="2_2gabd"]
+[ext_resource type="PackedScene" uid="uid://dx3pxn6mjholb" path="res://scenes/ui/upgrade_widget.tscn" id="3_w8d0u"]
 
 [node name="UpgradePanel" type="Panel"]
 offset_right = 250.0
 offset_bottom = 400.0
 mouse_filter = 2
-theme = ExtResource("1_knod4")
-script = ExtResource("2_awg7d")
+theme = ExtResource("1_k8u81")
+script = ExtResource("2_2gabd")
 
 [node name="TowerUpgradeMenuLabel" type="Label" parent="."]
 layout_mode = 0
@@ -53,7 +53,7 @@ offset_bottom = 28.0
 text = "DA NAME"
 horizontal_alignment = 1
 
-[node name="DamageWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_3gkut")]
+[node name="DamageWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_w8d0u")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 10.0
@@ -61,7 +61,7 @@ offset_top = 34.0
 offset_right = -240.0
 offset_bottom = -216.0
 
-[node name="AttackSpeedWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_3gkut")]
+[node name="AttackSpeedWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_w8d0u")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 10.0
@@ -70,7 +70,7 @@ offset_right = -240.0
 offset_bottom = -176.0
 upgrade_type = 1
 
-[node name="RangeWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_3gkut")]
+[node name="RangeWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_w8d0u")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 10.0
@@ -79,7 +79,7 @@ offset_right = -240.0
 offset_bottom = -136.0
 upgrade_type = 3
 
-[node name="TierWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_3gkut")]
+[node name="TierWidget" parent="TowerSpecificUpgradePanel" instance=ExtResource("3_w8d0u")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1

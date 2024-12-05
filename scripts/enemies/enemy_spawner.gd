@@ -6,7 +6,7 @@ const MUSHROOM_SPRITE_FRAMES = preload("res://resource/enemy_animations/mushroom
 const ROCK_ELEMENTAL_SPRITE_FRAMES = preload("res://resource/enemy_animations/rock_elemental_sprite_frames.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	GameRules.kill_enemy.connect(remove_enemy)
 
 func spawn_enemy():
 	if len(spawned_enemies) < 10:
@@ -17,7 +17,14 @@ func spawn_enemy():
 		spawned_enemies.append(new_enemy)
 		add_child(new_enemy)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func remove_enemy(enemy_reference : Enemy):
+	for index in len(spawned_enemies):
+		if enemy_reference == spawned_enemies[index]:
+			var enemy = spawned_enemies.pop_at(index)
+			enemy.queue_free()
+			break
+
 func _process(delta: float) -> void:
 	if spawn_timer.is_stopped():
 		spawn_enemy()

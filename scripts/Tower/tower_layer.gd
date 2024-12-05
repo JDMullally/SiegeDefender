@@ -32,11 +32,10 @@ func increase_rank(upgrade_type, cost):
 		recalculate_stats(upgrade_type)
 	return self
 
-
 func recalculate_stats(upgrade_type):
 	match upgrade_type:
 		GameRules.UPGRADE_TYPE.ATTACK_SPEED:
-			change_attack_rate(attack_rate, type)
+			change_attack_rate()
 		GameRules.UPGRADE_TYPE.RANGE:
 			set_attack_range()
 		_:
@@ -60,7 +59,7 @@ func set_init_stat_ranks_with_tier():
 		
 
 func calculate_addition_to_stats_per_tier(tower_tier : GameRules.TIER_TYPE) -> int:
-	return (pow(5, tower_tier) - 1)
+	return (pow(3, tower_tier) - 1)
 
 func set_tower_element_animation():
 	animated_sprite = AnimatedSprite2D.new()
@@ -106,14 +105,26 @@ func set_tower_sprite():
 
 func set_attack_rate():
 	attack_rate = Timer.new()
-	change_attack_rate(self.attack_rate, self.type)
+	change_attack_rate()
 	add_child(attack_rate)
 
-func change_attack_rate(attack_rate, tower_type):
-	attack_rate.wait_time = .45 + 2.55 /(sqrt(tower_type.attack_speed + stat_ranks[GameRules.UPGRADE_TYPE.ATTACK_SPEED]))
-	# print(.45 + 2.55 /(sqrt(tower_type.attack_speed)))
-	print(attack_rate.wait_time)
-
+func change_attack_rate():
+	var tower_type = self.type.tower_type
+	var total_attack_speed = self.type.attack_speed + stat_ranks[GameRules.UPGRADE_TYPE.ATTACK_SPEED]
+	match tower_type:
+		GameRules.TOWER_TYPE.GROUND_EFFECT:
+			attack_rate.wait_time = Math.scale_ground_area_attack_speed(total_attack_speed)
+		GameRules.TOWER_TYPE.ROCK:
+			attack_rate.wait_time = Math.projectile_attack_speed_scale(total_attack_speed)
+		GameRules.TOWER_TYPE.MISSILE:
+			attack_rate.wait_time = Math.projectile_attack_speed_scale(total_attack_speed)
+		GameRules.TOWER_TYPE.SHIELD:
+			attack_rate.wait_time = Math.shield_recharge_speed(total_attack_speed)
+		GameRules.TOWER_TYPE.CONTINUOUS:
+			attack_rate.wait_time = Math.scale_constant_attack_speed(total_attack_speed)
+		GameRules.TOWER_TYPE.BEAM:
+			attack_rate.wait_time = Math.scale_beam_attack_speed(total_attack_speed)
+	
 func set_tower_click_hitbox():
 	var sprite_vector2d : Vector2 = sprite.get_rect().size
 	var shape = RectangleShape2D.new()
